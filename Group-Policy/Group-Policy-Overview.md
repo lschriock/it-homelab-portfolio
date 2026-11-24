@@ -110,3 +110,15 @@ The following Windows administrative tools were used:
 Planned areas for continued development include Ubuntu domain integration, PowerShell administration and automation, and additional Active Directory troubleshooting scenarios.
 
 This project represents hands-on experience within a personal homelab environment.
+
+## Screenshots
+
+### Workstation Security Baseline
+![Workstation Baseline](../Screenshots/Group-Policy/16-GPO-Application-Client01.png)
+
+### Windows Firewall Configuration
+![Firewall Settings](../Screenshots/Group-Policy/09-GPO-Firewall-Settings1.png)
+![Firewall Settings](../Screenshots/Group-Policy/11-GPO-Firewall-Settings2.png)
+
+### User Drive Mapping Configuration
+![User Drive Mappings](../Screenshots/Group-Policy/18-GPO-Drive-Mapping-Group-Targeting.png)
