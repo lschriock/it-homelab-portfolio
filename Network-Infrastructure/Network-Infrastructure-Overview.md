@@ -155,7 +155,7 @@ Planned areas for continued development include additional network troubleshooti
 ## Screenshots
 
 ### DNS Resolution from CLIENT01
-![CLIENT01 DNS Resolution](../Screenshots/Network-Infrastructure/27-CLIENT01-DNS-Resolution.png)
+![CLIENT01 DNS Resolution](../Screenshots/Network-Infrastructure/26-DC01-DNS-Forward-Lookup-Zone.png)
 
 ### DHCP Lease Assignment
 ![CLIENT01 DHCP Lease](../Screenshots/Network-Infrastructure/28-DC01-DHCP-Lease-Client01.png)
