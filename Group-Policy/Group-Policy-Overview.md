@@ -113,7 +113,7 @@ This project represents hands-on experience within a personal homelab environmen
 
 ## Screenshots
 
-### Workstation Security Baseline
+### Workstation Group Policy Object Baseline
 ![Workstation Baseline](../Screenshots/Group-Policy/16-GPO-Application-Client01.png)
 
 ### Windows Firewall Configuration
