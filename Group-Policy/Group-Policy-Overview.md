@@ -117,8 +117,8 @@ This project represents hands-on experience within a personal homelab environmen
 ![Workstation Baseline](../Screenshots/Group-Policy/16-GPO-Application-Client01.png)
 
 ### Windows Firewall Configuration
-![Firewall Settings](../Screenshots/Group-Policy/09-GPO-Firewall-Settings1.png)
-![Firewall Settings](../Screenshots/Group-Policy/11-GPO-Firewall-Settings2.png)
+![Firewall Settings](../Screenshots/Group-Policy/09-GPO-Firewall-Settings-1.png)
+![Firewall Settings](../Screenshots/Group-Policy/11-GPO-Firewall-Settings-2.png)
 
 ### User Drive Mapping Configuration
 ![User Drive Mappings](../Screenshots/Group-Policy/18-GPO-Drive-Mapping-Group-Targeting.png)
