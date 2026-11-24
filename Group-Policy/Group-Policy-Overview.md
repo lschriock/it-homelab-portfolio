@@ -1,115 +1,111 @@
-# Active Directory Overview
+# Group Policy Overview
 
 ## 1. Purpose
 
-This document outlines the Active Directory Domain Services (AD DS) environment deployed within the homelab.
+This document describes the Group Policy configurations implemented within the personal IT homelab environment.
 
-The objective is to demonstrate centralized identity management, organizational structure, security group administration, and integration with Windows network services.
+The objective was to demonstrate centralized workstation configuration, security policy management, and user-specific resource access through Group Policy.
 
 ## 2. Environment Details
 
 - **Domain:** `lab.test`
 - **Domain Controller:** DC01
 - **Operating System:** Windows Server 2022
-- **Directory Service:** Active Directory Domain Services
-- **DNS Server:** DC01
-- **DHCP Server:** DC01
+- **Client Workstation:** CLIENT01 (Windows 11 Pro)
+- **Management Tool:** Group Policy Management Console (GPMC)
 
-## 3. Organizational Unit Structure
+Group Policy Objects were created and linked to appropriate Active Directory Organizational Units to manage domain workstation settings.
 
-The Active Directory domain uses Organizational Units (OUs) to organize directory objects and support centralized administration.
+## 3. Workstation Security Baseline
 
-Configured OUs:
+A Group Policy Object named `GPO_Workstation_Baseline` was created and linked to the Workstations Organizational Unit.
 
-- Employees
-- Groups
-- Servers
-- Workstations
+The policy establishes a baseline of security settings for domain-joined workstations.
 
-This structure separates users, security groups, servers, and workstation computer accounts for easier administration and policy management.
+### Configured Security Settings
 
-## 4. Security Group Administration
+**Windows Defender Antivirus**
+- Enabled real-time protection.
+- Enabled behavior monitoring.
+- Maintained antivirus protection through centralized policy configuration.
 
-Security groups were created to organize user access and manage permissions to shared resources.
+**Windows Firewall**
+- Enabled Windows Firewall for Domain, Private, and Public network profiles.
 
-**Examples:**
+**Workstation Inactivity Lock**
+- Configured workstations to lock after 10 minutes of inactivity.
 
-- `GG_Company_Users` — Global security group containing authorized domain users.
-- `DL_CompanyData_Access` — Domain Local security group used to manage access to the CompanyData share.
-- `DL_HR_Modify` — Domain Local security group assigned Modify permissions on the HR department folder.
+These settings demonstrate centralized security configuration and consistent policy enforcement across domain-joined workstations.
 
-### AGDLP Group Strategy
+## 4. Domain Password Policy
 
-The environment uses the AGDLP model:
+Domain password policy settings were configured through Group Policy to establish centralized password requirements for domain accounts.
 
-**Accounts → Global Groups → Domain Local Groups → Permissions**
+Account administration was also performed through Active Directory Users and Computers, including:
 
-This approach separates user membership from resource permissions and simplifies access administration.
-
-## 5. User and Account Administration
-
-Administrative tasks performed through Active Directory Users and Computers included:
-
-- Creating and managing domain user accounts.
-- Managing computer accounts.
-- Organizing directory objects within Organizational Units.
-- Creating and managing security groups.
 - Resetting user passwords.
 - Unlocking user accounts.
-- Managing group membership to control resource access.
+- Managing domain user accounts.
 
-Domain password requirements were configured through Group Policy.
+This demonstrates the relationship between Group Policy security settings and routine Active Directory account administration.
 
-## 6. File Server Integration
+## 5. Group Policy Verification
 
-Active Directory security groups are used to manage access to shared resources hosted on FILE01.
+Group Policy application was verified on CLIENT01 to confirm that the configured settings were being received by the domain-joined workstation.
 
-**Example configuration:**
+Verification included:
 
-- `GG_Company_Users` is a member of `DL_CompanyData_Access`.
-- `DL_CompanyData_Access` provides access to the parent CompanyData folder.
-- `DL_HR_Modify` provides Modify permissions on the HR department folder.
+- Refreshing Group Policy settings.
+- Reviewing applied policies on CLIENT01.
+- Confirming the workstation security baseline was applied.
+- Testing user drive mappings using domain accounts.
 
-This group-based approach avoids assigning resource permissions directly to individual user accounts.
+The verification process confirmed that the configured policies were being applied as intended.
 
-## 7. Access Verification
+## 6. User Drive Mapping
 
-Directory and resource access configurations were tested using domain user accounts from CLIENT01.
+A separate Group Policy Object named `GPO_User_Drive_Mappings` was created to automate access to shared network resources.
 
-Testing confirmed that:
+Group Policy Preferences were used to configure network drive mappings.
 
-- Users received access based on their security group membership.
-- Authorized users could access their assigned department resources.
-- NTFS permissions enforced department-specific access restrictions.
+### Security Group-Based Targeting
 
-These tests verified that Active Directory group membership and file server permissions worked together as intended.
+Item-level targeting was configured to apply drive mappings based on Active Directory security group membership.
 
-## 8. Administrative Tools
+This allows users to receive access to the appropriate shared resources based on their assigned group memberships.
 
-The following Windows administrative tools were used:
+The drive mappings reference shared folders hosted on FILE01.
 
-- **Active Directory Users and Computers:** User, computer, OU, and security group administration.
-- **Group Policy Management Console:** Centralized policy configuration.
-- **Windows Command Prompt:** Network and system verification.
-- **Windows administrative utilities:** Testing domain connectivity and resource accessibility.
+### Verification
 
-## 9. Skills Demonstrated
+Drive mappings were tested from CLIENT01 using domain user accounts with different security group memberships.
 
-- Active Directory Domain Services administration.
-- Organizational Unit design and management.
-- User and computer account administration.
-- Security group creation and management.
-- AGDLP group nesting.
-- Password resets and account unlocks.
-- Group-based resource access management.
-- Integration of Active Directory with file server permissions.
-- Verification of user access and directory configurations.
+Testing confirmed that the appropriate network drives were mapped based on the configured targeting conditions.
 
-## 10. Future Development
+## 7. Administrative Tools and Skills Demonstrated
 
-Planned areas for continued development include Ubuntu domain integration, PowerShell administration and automation, and additional Active Directory troubleshooting scenarios.
+**Administrative Tools:**
+- Group Policy Management Console (GPMC)
+- Active Directory Users and Computers (ADUC)
+- Windows Command Prompt
+- Windows PowerShell
 
-This project represents hands-on experience within a personal homelab environment.
+**Skills Demonstrated:**
+- Creating and managing Group Policy Objects.
+- Linking GPOs to Active Directory Organizational Units.
+- Configuring workstation security policies.
+- Managing Windows Defender and Firewall settings through Group Policy.
+- Configuring domain password policies.
+- Implementing Group Policy Preferences.
+- Configuring security group-based item-level targeting.
+- Verifying Group Policy application.
+- Troubleshooting policy and drive mapping behavior.
+
+## 8. Future Development
+
+Planned areas for continued development include additional Group Policy configurations, PowerShell-based administration, and further policy troubleshooting scenarios.
+
+This project represents hands-on Group Policy administration within a personal homelab environment.
 
 ## Screenshots
 
@@ -122,3 +118,4 @@ This project represents hands-on experience within a personal homelab environmen
 
 ### User Drive Mapping Configuration
 ![User Drive Mappings](../Screenshots/Group-Policy/18-GPO-Drive-Mapping-Group-Targeting.png)
+
