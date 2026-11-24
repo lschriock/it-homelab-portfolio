@@ -110,3 +110,13 @@ The following Windows administrative tools were used:
 Planned areas for continued development include Ubuntu domain integration, PowerShell administration and automation, and additional Active Directory troubleshooting scenarios.
 
 This project represents hands-on experience within a personal homelab environment.
+## Screenshots
+
+### Organizational Unit Structure
+![Active Directory Organizational Units](../Screenshots/Active-Directory/01-Active-Directory-structure.png)
+
+### Security Group Administration
+![Active Directory Security Groups](../Screenshots/Active-Directory/02-Active-Directory-Users.png)
+
+### AGDLP Group Nesting
+![AGDLP Group Nesting](../Screenshots/Active-Directory/07-AGDLP-Group-Nesting.png)
