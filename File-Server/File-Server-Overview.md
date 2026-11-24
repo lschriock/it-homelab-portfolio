@@ -117,3 +117,14 @@ These tests verified that the file server, Active Directory security groups, and
 Planned areas for continued development include additional department permission scenarios, PowerShell administration, and further file server troubleshooting.
 
 This project represents hands-on file server administration within a personal homelab environment.
+
+## Screenshots
+
+### CompanyData Folder Structure
+![CompanyData Folder Structure](../Screenshots/File-Server/19-CompanyData-Folder-Structure.png)
+
+### SMB Share Permissions
+![CompanyData SMB Permissions](../Screenshots/File-Server/20-CompanyData-SMB-Permissions.png)
+
+### NTFS Permissions
+![CompanyData NTFS Permissions](../Screenshots/File-Server/08-CompanyData-NTFS-Permissions.png)
