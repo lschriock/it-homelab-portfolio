@@ -116,7 +116,7 @@ This project represents hands-on experience within a personal homelab environmen
 ![Active Directory Organizational Units](../Screenshots/Active-Directory/01-Active-Directory-Structure.png)
 
 ### Security Group Administration
-![Active Directory Security Groups](../Screenshots/Active-Directory/02-Active-Directory-Users.png)
+![Active Directory Security Groups](../Screenshots/Active-Directory/04-Active-Directory-Groups.png)
 
 ### AGDLP Group Nesting
 ![AGDLP Group Nesting](../Screenshots/Active-Directory/07-AGDLP-Group-Nesting.png)
