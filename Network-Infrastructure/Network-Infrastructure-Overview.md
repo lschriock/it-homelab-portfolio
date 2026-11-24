@@ -151,3 +151,11 @@ These tests demonstrated that the network infrastructure was providing the neces
 ## 9. Future Development
 
 Planned areas for continued development include additional network troubleshooting scenarios, PowerShell-based administration, and integrating the available Ubuntu Desktop system into the Active Directory environment.
+
+## Screenshots
+
+### DNS Resolution from CLIENT01
+![CLIENT01 DNS Resolution](../Screenshots/Network-Infrastructure/27-CLIENT01-DNS-Resolution.png)
+
+### DHCP Lease Assignment
+![CLIENT01 DHCP Lease](../Screenshots/Network-Infrastructure/28-DC01-DHCP-Lease-Client01.png)
